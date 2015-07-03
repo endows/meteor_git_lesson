@@ -18,6 +18,8 @@ if (Meteor.isClient) {
 
 if (Meteor.isServer) {
   Meteor.startup(function () {
-    // code to run on server at startup
+    if (Meteor.isClient) {
+      Session.set('counter',0)
+    }
   });
 }
